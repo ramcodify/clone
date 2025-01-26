@@ -5084,24 +5084,35 @@
                     </div>
                     <div class="footer-menus-row-2">
                         <div class="div-block-183198052169">
-                            <h6 class="h6-small-2 quicklinks">Quick Links</h6>
-                            <div class="div-block-1911">
-                                <div class="footer-menu-column-4">
-                                    <ul role="list" class="link-menu-2 links w-list-unstyled">
-                                        <li class="link-menu-item-2"><a href="" id="footer-home" class="footer-link-4 track-button">Home<br/></a></li>
-                                        <li class="link-menu-item-2"><a href="" id="footer-academy" class="footer-link-4 track-button">Academy<br/></a></li>
-                                        <li class="link-menu-item-2"><a href="" id="footer-intensive" class="footer-link-4 track-button">Intensive<br/></a></li>
-                                        <li class="link-menu-item-2"><a href="" id="footer-Hire-with-us" class="footer-link-4 track-button">Hire with us<br/></a></li>
-                                    </ul>
+                            <div style="font-family: Arial, sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100px; margin-top:50px;;">
+                                <div class="chatbox" style="background-color: white; width: 300px; padding: 15px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column;">
+                                    <div class="messages" id="messages" style="height: 150px; overflow-y: auto; border-bottom: 1px solid #ddd; margin-bottom: 10px; padding: 10px;">
+                                        <p><strong>Bot:</strong> Hi! How can I help you today?</p>
+                                    </div>
+                                    <div class="input-container" style="display: flex;">
+                                        <input type="text" id="userInput" placeholder="Type here..." style="width: 100%; padding: 8px; margin-right: 10px; border: 1px solid #ddd; border-radius: 5px;" />
+                                        <button onclick="sendMessage()" style="padding: 8px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+                                    </div>
                                 </div>
-                                <div class="div-block-183198052143814">
-                                    <ul role="list" class="link-menu-2 links _2nd w-list-unstyled">
-                                        <li class="link-menu-items"><a href="" id="footer-contact-us" class="footer-link-4 track-button">Contact Us<br/></a></li>
-                                        <li class="link-menu-item-2"><a href="" id="footer-about-us" class="footer-link-4 track-button">About Us<br/></a></li>
-                                        <li class="link-menu-item-2"><a href="" id="footer-reviews" class="footer-link-4 track-button">Reviews <br/></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
+                                <script>
+                                    function sendMessage() {
+                                        var userInput = document.getElementById("userInput").value;
+                                        var messagesDiv = document.getElementById("messages");
+                            
+                                        if (userInput.toLowerCase() === "hi" || userInput.toLowerCase() === "hello") {
+                                            messagesDiv.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+                                            messagesDiv.innerHTML += `<p><strong>Bot:</strong> ${userInput.charAt(0).toUpperCase() + userInput.slice(1)}!</p>`;
+                                        } else {
+                                            messagesDiv.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+                                            messagesDiv.innerHTML += `<p><strong>Bot:</strong> Sorry, I can only respond to "Hi" or "Hello".</p>`;
+                                        }
+                            
+                                        document.getElementById("userInput").value = "";  // Clear the input field
+                                        messagesDiv.scrollTop = messagesDiv.scrollHeight;  // Scroll to the bottom
+                                    }
+                                </script>
+                                                        </div>
                         </div>
                         <div class="footer-menu-column-4 reachus email">
                             <h6 class="h6-small-2">Payment Methods</h6>
@@ -5126,3 +5137,4 @@
                             <a
                                 id="footer-linkedin-profile-link" href="https://www.linkedin.com/company/nxtwavetech" target="_blank" class="link-block-45 track-button w-inline-block"><img src="https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/61f3fe1a40dc31c249e1ab99_linkedin-icon.svg" loading="lazy" alt="" class="image-8128822005" /></a><a id="footer-youtube-profile-link" href="https://www.youtube.com/c/NxtWaveTech"
                                     target="_blank" class="link-block-43 track-button w-inline-block"><img src="https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/62384993d97ad72405dee8d2_Frame%2031%20(1).svg" loading="lazy" alt="" class="image-8128822005"/></a></div>
+        
